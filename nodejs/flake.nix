@@ -9,9 +9,11 @@
       let pkgs = import nixpkgs { inherit system; }; in
       {
         devShells.default = pkgs.mkShell {
-          packages = [
-            pkgs.nodejs-16_x
-          ];
+          packages = let nodejs = pkgs.nodejs-slim-16_x; in
+            [
+              nodejs
+              (pkgs.yarn.override { inherit nodejs; })
+            ];
         };
       }
     );
