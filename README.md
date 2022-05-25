@@ -13,5 +13,5 @@ $ nix registry remove flake-templates
 # Usage
 
 ```
-$ nix flake new my-project -t haskell-nix-templates#nodejs
+$ nix flake new my-project -t flake-templates#nodejs
 ```
